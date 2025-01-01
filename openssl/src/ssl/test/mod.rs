@@ -1291,7 +1291,7 @@ fn custom_extensions() {
             ExtensionContext::CLIENT_HELLO,
             |_, _, _| -> Result<Option<&'static [u8]>, _> { unreachable!() },
             |_, _, data, _| {
-                FOUND_EXTENSION_2.store(data == b"hello", Ordering::SeqCst);
+                FOUND_EXTENSION_2.store(data == b"another hello", Ordering::SeqCst);
                 Ok(())
             },
         )
